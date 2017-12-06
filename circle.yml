@@ -5,12 +5,11 @@ dependencies:
 
 test:
   override:                                                                     
-    - terraform get
-    - terraform validate 
+    - terraform validate ./*/ 
 
 deployment:                                                                     
   production:                                                                   
     branch: production 
     owner: chadq
-    commands:                                                                   
+    commands:
       - terraform apply 
