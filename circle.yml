@@ -1,0 +1,17 @@
+dependencies:
+  pre:
+    - wget https://dl.bintray.com/mitchellh/terraform/terraform_0.6.3_linux_amd64.zip
+    - unzip terraform_0.6.3_linux_amd64.zip
+    - wget https://github.com/wata727/tflint/releases/download/v0.5.2/tflint_darwin_amd64.zip
+    - uznip tflint_darwin_amd64.zip
+
+test:
+  override:                                                                     
+    - tflint
+
+deployment:                                                                     
+  production:                                                                   
+    branch: production 
+    owner: chadq
+    commands:                                                                   
+      - terraform apply 
