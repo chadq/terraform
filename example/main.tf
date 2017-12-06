@@ -2,8 +2,6 @@ provider "aws" {
     region = "us-east-1"
 }
 
-BLAH BLAH BLAH {
-}
 resource "aws_launch_configuration" "example" {
     image_id = "ami-2d39803a"
     instance_type = "t2.micro"
@@ -90,13 +88,4 @@ resource "aws_elb" "example" {
     }
 }
 
-variable "server_port" {
-    description = "The port the server will use for HTTP requests"
-    default = 8080
-}
-
 data "aws_availability_zones" "all" {}
-
-output "elb_dns_name" {
-    value = "${aws_elb.example.dns_name}"
-}
