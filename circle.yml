@@ -5,6 +5,7 @@ dependencies:
 
 test:
   override:                                                                     
+    - terraform get
     - terraform validate 
 
 deployment:                                                                     
